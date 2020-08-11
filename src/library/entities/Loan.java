@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 //Author : Dilanka
-//Reviever : Nipuna
+//Reviewer : Nipuna
 //Mediator : Subhashini
 
 @SuppressWarnings("serial")
