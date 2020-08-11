@@ -19,7 +19,7 @@ public class Loan implements Serializable {
 	private lOaN_sTaTe state; // Change the variable 'StAtE' to 'state'
 
 	
-	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
+	public Loan(int loanId, Book book, Member member, Date dueDate) {
 		this.LoAn_Id = loanId;
 		this.BoOk = bOoK;
 		this.MeMbEr = mEmBeR;
