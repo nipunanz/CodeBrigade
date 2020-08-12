@@ -20,7 +20,7 @@ public class Book implements Serializable {
 	private String callno; //change the variable 'CALLNO' to 'callno'
 	private int id;        //change the variable 'iD' to 'id'
 	
-	private enum sTaTe { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
+	private enum State { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
 	private sTaTe StAtE;
 	
 	
