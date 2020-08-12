@@ -1,6 +1,11 @@
+
+
 package library.entities;
 import java.io.Serializable;
 
+//Author Subhashani
+//Reviewer Nipuna
+//Mediator Dilanka
 
 @SuppressWarnings("serial")
 public class Book implements Serializable {
@@ -9,6 +14,11 @@ public class Book implements Serializable {
 	private String AuThOr;
 	private String CALLNO;
 	private int iD;
+
+	private String title,  //change the variable 'tItle' to 'title'
+	private String author; //change the variable 'AuThOr' to 'author'
+	private String callno; //change the variable 'CALLNO' to 'callno'
+	private int id;        //change the variable 'iD' to 'id'
 	
 	private enum sTaTe { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
 	private sTaTe StAtE;
