@@ -14,6 +14,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// Author   : Nipuna
+// Reviewer : Dilanka
+// Mediator : Chiranga
+
 @SuppressWarnings("serial")
 public class Library implements Serializable {
 	
