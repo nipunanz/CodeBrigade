@@ -10,7 +10,7 @@ import java.util.Date;
 @SuppressWarnings("serial")
 public class Loan implements Serializable {
 	
-	public static enum LoanState { CURRENT, OVER_DUE, DISCHARGED }; //Change the enum 'lOaN_sTaTe' to 'LoanState'
+	public static enum LoanState { CURRENT, OVER_DUE, DISCHARGED }; // Change the enum 'lOaN_sTaTe' to 'LoanState'
 	
 	private int loanId; // Change the variable 'LoAn_Id' to 'loanId'
 	private Book book; // Change the variable 'BoOk' to 'book'
@@ -36,17 +36,17 @@ public class Loan implements Serializable {
 	}
 
 	
-	public boolean isOverdue() { //Change the method 'Is_OvEr_DuE' to 'isOverdue'
+	public boolean isOverdue() { // Change the method 'Is_OvEr_DuE' to 'isOverdue'
 		return state == LoanState.OVER_DUE;
 	}
 
 	
-	public Integer getId() { //Change the method 'GeT_Id' to 'getId'
+	public Integer getId() { // Change the method 'GeT_Id' to 'getId'
 		return loanId;
 	}
 
 
-	public Date getDueDate() { //Change the method 'GeT_DuE_DaTe' to 'getDueDate'
+	public Date getDueDate() { // Change the method 'GeT_DuE_DaTe' to 'getDueDate'
 		return date;
 	}
 	
@@ -56,27 +56,27 @@ public class Loan implements Serializable {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("Loan:  ").append(loanId).append("\n")
-		  .append("  Borrower ").append(member.GeT_ID()).append(" : ")
+		  .append("  Borrower ").append(member.getId()).append(" : ")
 		  .append(member.getLastName()).append(", ").append(member.getFirstName()).append("\n")
-		  .append("  Book ").append(book.gEtId()).append(" : " )
-		  .append(book.gEtTiTlE()).append("\n")
+		  .append("  Book ").append(book.getId()).append(" : " )
+		  .append(book.getTitle()).append("\n")
 		  .append("  DueDate: ").append(sdf.format(date)).append("\n")
 		  .append("  State: ").append(state);		
 		return sb.toString();
 	}
 
 
-	public Member getMember() { //Change the method 'GeT_MeMbEr' to 'getMember'
+	public Member getMember() { // Change the method 'GeT_MeMbEr' to 'getMember'
 		return member;
 	}
 
 
-	public Book getBook() { //Change the method 'GeT_BoOk' to 'getBook'
+	public Book getBook() { // Change the method 'GeT_BoOk' to 'getBook'
 		return book;
 	}
 
 
-	public void isDischarge() { //Change the method 'DiScHaRgE' to 'isDischarge'
+	public void isDischarge() { // Change the method 'DiScHaRgE' to 'isDischarge'
 		state = LoanState.DISCHARGED;		
 	}
 
