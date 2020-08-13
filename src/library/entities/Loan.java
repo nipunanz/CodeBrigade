@@ -28,25 +28,25 @@ public class Loan implements Serializable {
 	}
 
 	
-	public void checkOverdue() {  // Change the method 'cHeCk_OvEr_DuE' to 'checkOverdue'
+	public void checkOverdue() { // Change the method 'cHeCk_OvEr_DuE' to 'checkOverdue'
 		if (state == LoanState.CURRENT &&
-			Calendar.gEtInStAnCe().gEt_DaTe().after(date)) 
+			Calendar.getInstance().getDate().after(date)) 
 			this.state = LoanState.OVER_DUE;			
 		
 	}
 
 	
-	public boolean Is_OvEr_DuE() {
+	public boolean isOverdue() { //Change the method 'Is_OvEr_DuE' to 'isOverdue'
 		return state == LoanState.OVER_DUE;
 	}
 
 	
-	public Integer GeT_Id() {
+	public Integer getId() { //Change the method 'GeT_Id' to 'getId'
 		return loanId;
 	}
 
 
-	public Date GeT_DuE_DaTe() {
+	public Date getDueDate() { //Change the method 'GeT_DuE_DaTe' to 'getDueDate'
 		return date;
 	}
 	
@@ -57,7 +57,7 @@ public class Loan implements Serializable {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Loan:  ").append(loanId).append("\n")
 		  .append("  Borrower ").append(member.GeT_ID()).append(" : ")
-		  .append(member.GeT_LaSt_NaMe()).append(", ").append(member.GeT_FiRsT_NaMe()).append("\n")
+		  .append(member.getLastName()).append(", ").append(member.getFirstName()).append("\n")
 		  .append("  Book ").append(book.gEtId()).append(" : " )
 		  .append(book.gEtTiTlE()).append("\n")
 		  .append("  DueDate: ").append(sdf.format(date)).append("\n")
@@ -66,17 +66,17 @@ public class Loan implements Serializable {
 	}
 
 
-	public Member GeT_MeMbEr() {
+	public Member getMember() { //Change the method 'GeT_MeMbEr' to 'getMember'
 		return member;
 	}
 
 
-	public Book GeT_BoOk() {
+	public Book getBook() { //Change the method 'GeT_BoOk' to 'getBook'
 		return book;
 	}
 
 
-	public void DiScHaRgE() {
+	public void isDischarge() { //Change the method 'DiScHaRgE' to 'isDischarge'
 		state = LoanState.DISCHARGED;		
 	}
 
