@@ -15,36 +15,36 @@ public class Book implements Serializable {
 	//private String CALLNO;
 	//private int iD;
 
-	private String title,  //change the variable 'tItle' to 'title'
+	private String title;  //change the variable 'tItle' to 'title'
 	private String author; //change the variable 'AuThOr' to 'author'
 	private String callno; //change the variable 'CALLNO' to 'callno'
 	private int id;        //change the variable 'iD' to 'id'
 	
-	private enum State { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
+	private enum State { available, ON_LOAN, damaged, RESERVED };
 	private State State;
 	
 	
 	public Book(String author, String title, String callNo, int id) {
 		this.author = author;
 		this.title = title;
-		this.CALLNO = callNo;
-		this.iD = id;
-		this.State = State.AVAILABLE;
+		this.callno = callNo;
+		this.id = id;
+		this.State = State.available;
 	}
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Book: ").append(iD).append("\n")
+		sb.append("Book: ").append(id).append("\n")
 		  .append("  Title:  ").append(title).append("\n")
-		  .append("  Author: ").append(AuThOr).append("\n")
-		  .append("  CallNo: ").append(CALLNO).append("\n")
+		  .append("  Author: ").append(author).append("\n")
+		  .append("  CallNo: ").append(callno).append("\n")
 		  .append("  State:  ").append(State);
 		
 		return sb.toString();
 	}
 
 	public Integer getId() {
-		return iD;
+		return id;
 	}
 
 	public String gettitle() {
@@ -53,8 +53,8 @@ public class Book implements Serializable {
 
 
 	
-	public boolean iS_Available() {
-		return State == State.Available;
+	public boolean iS_available() {
+		return State == State.available;
 	}
 
 	
@@ -63,13 +63,13 @@ public class Book implements Serializable {
 	}
 
 	
-	public boolean iS_Damaged() {
-		return State == State.DAMAGED;
+	public boolean iS_damaged() {
+		return State == State.damaged;
 	}
 
 	
 	public void Borrow() {
-		if (State.equals(State.AVAILABLE)) 
+		if (State.equals(State.available)) 
 			State = State.ON_LOAN;
 		
 		else 
@@ -79,13 +79,13 @@ public class Book implements Serializable {
 	}
 
 
-	public void Return(boolean Damaged) {
+	public void Return(boolean damaged) {
 		if (State.equals(State.ON_LOAN)) 
-			if (Damaged) 
-				State = State.Damaged;
+			if (damaged) 
+				State = State.damaged;
 			
 			else 
-				State = State.Available;
+				State = State.available;
 			
 		
 		else 
@@ -95,8 +95,8 @@ public class Book implements Serializable {
 
 	
 	public void Repair() {
-		if (State.equals(State.Damaged)) 
-			State = State.Available;
+		if (State.equals(State.damaged)) 
+			State = State.available;
 		
 		else 
 			throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", State));
