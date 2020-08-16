@@ -3,6 +3,10 @@ import library.entities.Book;
 import library.entities.Library;
 import library.entities.Loan;
 
+//Author   : Dilanka
+//Mediator : Chiranga
+//Reviever : Nipuna
+
 public class ReturnBookControl { // Change class name 'rETURN_bOOK_cONTROL' to 'ReturnBookControl'
 
 	private ReturnBookUI ui; // Change variable name 'Ui' to 'ui'
