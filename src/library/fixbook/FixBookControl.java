@@ -78,7 +78,7 @@ public class FixBookControl {  // changed the class name "fIX_bOOK_cONTROL" to "
 		}
 		
 		currentBook = null;    // Changed the variable name "CuRrEnT_BoOk" name to "currentBook"
-		ui.setState(FixBookUI.Ui_State.READY); // Changed the  method  name "uI_sTaTe" to "Ui_State" // Changed the method name "SeT_StAtE"  to "setState"
+		ui.setState(FixBookUI.UiState.READY); // Changed the  method  name "uI_sTaTe" to "UiState" // Changed the method name "SeT_StAtE"  to "setState"
 		state = ControlState.READY;	// Changed the variable name  "StAtE"  to "state"	// Changed the variable name  "CoNtRoL_StAtE"  to "ControlState"
 	}
 
