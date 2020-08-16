@@ -51,20 +51,21 @@ public class PayFineControl { // changed class name "pAY_fINE_cONTROL" to "PayFi
 	
 	public void cancel() { // changed "CaNcEl" to "cancel"
 		ui.setState(PayFineUi.UiState.CANCELLED); // changed "PayFineUI" to "payFineUi" & "SeT_StAtE" to "setState" &
-		state= ControlState.CANCELLED; // changed "cOnTrOl_sTaTe" to "ControlState" & 
+		state = ControlState.CANCELLED; // changed "cOnTrOl_sTaTe" to "ControlState"  
 	}
 
 
 	public double payFine(double amount) { // changed "PaY_FiNe" to "payFine" & "AmOuNt" to "amount"
-		if (!state.equals(ControlState.PAYING)) // changed "cOnTrOl_sTaTe" to "ControlState" &  changed  "StAtE" to "State"
+		if { (!state.equals(ControlState.PAYING)) // changed "cOnTrOl_sTaTe" to "ControlState" &  changed  "StAtE" to "State"
 			throw new RuntimeException("PayFineControl: cannot call payFine except in PAYING state");
+		   }
 	}	
-		double change = member.payFine(amount); { // changed  "MeMbEr" to "member" & "PaY_FiNe" to "payFine" & "ChAnGe" to "change" & "AmOuNt" to "amount"
-		if (change > 0) // changed "ChAnGe" to "change"
+		double change = member.payFine(amount);  // changed  "MeMbEr" to "member" & "PaY_FiNe" to "payFine" & "ChAnGe" to "change" & "AmOuNt" to "amount"
+		if { (change > 0) // changed "ChAnGe" to "change"
 			ui.display(String.format("Change: $%.2f", change)); // changed  "Ui" to "ui" & "DiSplAY" to "display" & "ChAnGe" to "change"
 		}
 		ui.display(member.toString()); // changed  "Ui" to "ui" & changed  "MeMbEr" to "member" & "DiSplAY" to "display"
-		ui.setState(payFineUi.uiState.COMPLETED); // changed "PayFineUI" to "payFineUi" & "Ui" to "ui" & "SeT_StAtE" to "setState" & "uI_sTaTe" to "uiState" 
+		ui.setState(PayFineUi.UiState.COMPLETED); // changed "PayFineUI" to "payFineUi" & "Ui" to "ui" & "SeT_StAtE" to "setState" & "uI_sTaTe" to "uiState" 
 		state = ControlState.COMPLETED; // changed "cOnTrOl_sTaTe" to "ControlState" &  changed  "StAtE" to "State"
 		return change; // "ChAnGe" to "change"
 	}
