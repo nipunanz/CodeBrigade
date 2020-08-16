@@ -3,7 +3,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-//Author   : Dilanka
+//Author : Dilanka
 //Reviewer : Chiranga
 //Mediator : Subhashini
 
@@ -16,6 +16,16 @@ public class Loan implements Serializable {
 	private Book book; // Change the variable 'BoOk' to 'book'
 	private Member member; // Change the variable 'MeMbEr' to 'member'
 	private Date date; // Change the variable 'DaTe' to 'date'
+	private LoanState state; // Change the variable 'StAtE' to 'state'
+
+	
+	public Loan(int loanId, Book book, Member member, Date dueDate) {
+		this.LoAn_Id = loanId;
+		this.BoOk = bOoK;
+		this.MeMbEr = mEmBeR;
+		this.DaTe = DuE_dAtE;
+		this.StAtE = lOaN_sTaTe.CURRENT;
+
 	private LoanState state; // Change the variable 'StAtE' to 'state'
 
 	
