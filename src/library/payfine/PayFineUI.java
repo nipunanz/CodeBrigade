@@ -1,21 +1,21 @@
 package library.payfine;
 import java.util.Scanner;
 
-Author   : Chiranga
-Reviwer  : Dilanka
-Mediator : Subhashini
+// Author   : Chiranga
+// Reviwer  : Dilanka
+// Mediator : Subhashini
 
 public class PayFineUI {
 
 
 	public static enum UiState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED }; // changed variable name "uI_sTaTe" to "UiState"
 
-	private payFineControl control; // changed variable name "pAY_fINE_cONTROL" to "payFineControl" & "CoNtRoL" to "control"
+	private PayFineControl control; // changed variable name "pAY_fINE_cONTROL" to "payFineControl" & "CoNtRoL" to "control"
 	private Scanner input;
 	private UiState state; // changed variable name "uI_sTaTe" to "UiState" & "StAtE" to "state"
 
 	
-	public PayFineUI(payFineControl control) { // chnage "CoNtRoL" to "control"
+	public PayFineUI(PayFineControl control) { // chnage "CoNtRoL" to "control"
 		this.control = control; // "CoNtRoL" to "control"
 		input = new Scanner(System.in);
 		state = UiState.INITIALISED; // changed variable name "uI_sTaTe" to "UiState" & "StAtE" to "state"
