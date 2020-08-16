@@ -31,9 +31,9 @@ public class ReturnBookUI {
 				
 			case READY:
 				String bookInputString = input("Scan Book (<enter> completes): "); // Change varibale name 'BoOk_InPuT_StRiNg' to 'bookInputString' 
-				if (bookInputString.length() == 0) 
+				if (bookInputString.length() == 0) {
 					control.scanningComplete();
-				
+				}
 				else {
 					try {
 						int bookId = Integer.valueOf(bookInputString).intValue(); // Change varibale name 'Book_Id' to 'bookId' 
@@ -48,9 +48,9 @@ public class ReturnBookUI {
 			case INSPECTING:
 				String ans = input("Is book damaged? (Y/N): ");// Change varibale name 'AnS' to 'ans' 
 				boolean isDamaged = false;
-				if (ans.toUpperCase().equals("Y")) 					
+				if (ans.toUpperCase().equals("Y")) {				
 					isDamaged = true;
-				
+				}
 				control.dischageLoan(isDamaged);
 			
 			case COMPLETED:
