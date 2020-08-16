@@ -47,7 +47,7 @@ public class BorrowBookControl {
 		}
 		member = library.getMember(memberId);
 		if (member == null) {
-			ui.DiSpLaY("Invalid memberId");
+			ui.diplay("Invalid memberId");
 			return;
 		}
 		if (library.isMemberBorrow(member)) {
