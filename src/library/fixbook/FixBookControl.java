@@ -42,7 +42,7 @@ public class FixBookControl {  // changed the class name "fIX_bOOK_cONTROL" to "
 	}
 
 
-	public void Bookscanned(int bookId) {  // Changed the class name "BoOk_ScAnNeD" to "Bookscanned" // Changed the variable name "BoOkId" to "bookId"
+	public void bookScanned(int bookId) {  // Changed the class name "BoOk_ScAnNeD" to "bookScanned" // Changed the variable name "BoOkId" to "bookId"
 		if (!state.equals(ControlState.READY)) 
 		{ // Changed the variable name  "StAtE"  to "state"  // Changed the variable name  "CoNtRoL_StAtE"  to "ControlState"
 			throw new RuntimeException("FixBookControl: cannot call bookScanned except in READY state");
@@ -67,7 +67,7 @@ public class FixBookControl {  // changed the class name "fIX_bOOK_cONTROL" to "
 	}
 
 
-	public void FiX_BoOk(boolean mustFix) { // Changed the variable name "mUsT_FiX" to "mustFix"
+	public void FiX_BoOk(boolean mustFix) { // Changed the variable name "mUsT_FiX" to "mustFix" // Changed the method name "FiX_BoOk" to "fixBook"
 		if (!state.equals(ControlState.FIXING))  // Changed the variable name  "StAtE"  to "state" // Changed the variable name  "CoNtRoL_StAtE"  to "ControlState"
 			throw new RuntimeException("FixBookControl: cannot call fixBook except in FIXING state");
 			
