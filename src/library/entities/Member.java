@@ -50,7 +50,7 @@ public class Member implements Serializable {
 	}
 
 	
-	public int getID() {
+	public int getId() {
 		return memberId;
 	}
 
@@ -60,12 +60,12 @@ public class Member implements Serializable {
 	}
 
 	
-	public int getNumberOfcurrentLoans() {
+	public int getNumberOfCurrentLoans() {
 		return currentLoans.size();
 	}
 
 	
-	public double finesOwed() {
+	public double finesOwned() {
 		return finesOwing;
 	}
 
@@ -80,12 +80,12 @@ public class Member implements Serializable {
 	}
 
 	
-	public String getlastName() {
+	public String getLastName() {
 		return lastName;
 	}
 
 	
-	public String getfirstName() {
+	public String getFirstName() {
 		return firstName;
 	}
 
@@ -110,9 +110,9 @@ public class Member implements Serializable {
 	}
 
 
-	public void dischargeLoan(Loan LoAn) {
-		if (currentLoans.containsKey(LoAn.GeT_Id())) {
-			currentLoans.remove(LoAn.GeT_Id());
+	public void dischargeLoan(Loan loan) {
+		if (currentLoans.containsKey(loan.getId())) {
+			currentLoans.remove(loan.getId());
 		} else {
 			throw new RuntimeException("No such loan held by member");
 		}

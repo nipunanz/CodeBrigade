@@ -17,7 +17,7 @@ public class BorrowBookControl {
 	
 	private Library library;
 	private Member member;
-	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
+	private enum ControlState { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
 	private ControlState state;
 	
 	private List<Book> pendingList;
@@ -47,7 +47,7 @@ public class BorrowBookControl {
 		}
 		member = library.getMember(memberId);
 		if (member == null) {
-			ui.diplay("Invalid memberId");
+			ui.display("Invalid memberId");
 			return;
 		}
 		if (library.isMemberBorrow(member)) {
@@ -62,7 +62,7 @@ public class BorrowBookControl {
 	}
 	
 	
-	public void scaned(int bookId) {
+	public void scanned(int bookId) {
 		book = null;
 		if (!state.equals(ControlState.SCANNING)) {
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
