@@ -17,17 +17,7 @@ public class Loan implements Serializable {
 	private Member member; // Change the variable 'MeMbEr' to 'member'
 	private Date date; // Change the variable 'DaTe' to 'date'
 	private LoanState state; // Change the variable 'StAtE' to 'state'
-
-	
-	public Loan(int loanId, Book book, Member member, Date dueDate) {
-		this.LoAn_Id = loanId;
-		this.BoOk = bOoK;
-		this.MeMbEr = mEmBeR;
-		this.DaTe = DuE_dAtE;
-		this.StAtE = lOaN_sTaTe.CURRENT;
-
-	private LoanState state; // Change the variable 'StAtE' to 'state'
-
+  
 	
 	public Loan(int loanId, Book book, Member member, Date dueDate) {
 		this.loanId = loanId;
@@ -86,7 +76,7 @@ public class Loan implements Serializable {
 	}
 
 
-	public void isDischarge() { // Change the method 'DiScHaRgE' to 'isDischarge'
+	public void discharge() { // Change the method 'DiScHaRgE' to 'isDischarge'
 		state = LoanState.DISCHARGED;		
 	}
 
