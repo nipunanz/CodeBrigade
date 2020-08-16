@@ -33,8 +33,7 @@ public class PayFineControl { // changed class name "pAY_fINE_cONTROL" to "PayFi
 
 
 	public void cardSwiped(int memberId) { // changed "CaRd_sWiPeD" to "cardSwiped" & "MeMbEr_Id" to "memberId"
-		if {
-			(!state.equals(ControlState.READY)) // changed  "cOnTrOl_sTaTe" to "ControlState" &  changed  "StAtE" to "State"
+		if (!state.equals(ControlState.READY)) { // changed  "cOnTrOl_sTaTe" to "ControlState" &  changed  "StAtE" to "State"
 			throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");
 		}	
 		member = library.getMember(memberId); // changed  "LiBrArY" to "library" &  "MeMbEr_Id" to "memberId" & "gEt_MeMbEr" to "getMember"
