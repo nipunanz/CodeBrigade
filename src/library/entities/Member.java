@@ -50,7 +50,7 @@ public class Member implements Serializable {
 	}
 
 	
-	public int getID() {
+	public int getId() {
 		return memberId;
 	}
 
@@ -60,12 +60,12 @@ public class Member implements Serializable {
 	}
 
 	
-	public int getNumberOfcurrentLoans() {
+	public int getNumberOfCurrentLoans() {
 		return currentLoans.size();
 	}
 
 	
-	public double finesOwed() {
+	public double finesOwned() {
 		return finesOwing;
 	}
 

@@ -102,7 +102,7 @@ public class Main {
 					break;
 					
 				case "L": 
-					borrowBook();
+					borrowBooks();
 					break;
 					
 				case "R": 
@@ -118,7 +118,7 @@ public class Main {
 					break;
 					
 				case "T": 
-					incementDate();
+					incrementDate();
 					break;
 					
 				case "Q": 
@@ -199,7 +199,7 @@ public class Main {
 	}
 
 
-	private static void addBookA() {
+	private static void addBook() {
 		
 		String author = input("Enter author: ");
 		String title  = input("Enter title: ");

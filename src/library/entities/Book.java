@@ -34,7 +34,7 @@ public class Book implements Serializable {
 		sb.append("  Book: ").append(id).append("\n")
 		  .append("  Title:  ").append(title).append("\n")
 		  .append("  Author: ").append(author).append("\n")
-		  .append("  CallNo: ").append(callno).append("\n")
+		  .append("  CallNo: ").append(callNo).append("\n")
 		  .append("  State:  ").append(State);
 		
 		return sb.toString();
@@ -65,7 +65,7 @@ public class Book implements Serializable {
 	}
 
 	
-	public void Borrow() {
+	public void borrow() {
 		if (State.equals(State.AVAILABLE))
 		{
 
@@ -85,19 +85,16 @@ public class Book implements Serializable {
 	public void Return(boolean damaged) {
 		if (State.equals(State.ON_LOAN)) 
 		{
-			if (DAMAGED) 
+			if (damaged) { 
 				State = State.DAMAGED;
-		}	
-			else 
-		{
+			}	
+			else {
 				State = State.AVAILABLE;
-		]	
+			}	
 		
-		else 
-		{
+		} else {
 			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", State));
-		}
-				
+		}		
 	}
 
 	

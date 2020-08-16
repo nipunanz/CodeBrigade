@@ -170,8 +170,8 @@ public class Library implements Serializable {
 		if (member.finesOwned() >= MAX_FINES_OWED) 
 			return false;
 				
-		for (Loan loan : member.getLoans()) 
-			if (loan.isOverDue()) 
+		for (Loan loan : member.getLoan()) 
+			if (loan.isOverdue()) 
 				return false;
 			
 		return true;
@@ -200,12 +200,12 @@ public class Library implements Serializable {
 		
 		return null;
 	}
-
 	
-	public double calculateOverDueFine(Loan loan) {
-		if (loan.isOverDue()) {
-			long daysOverDue = Calendar.getInstance().getDaysDifference(loan.getDueDate());
-			double fine = daysOverDue * FINE_PER_DAY;
+	
+	public double calculateOverdueFine(Loan loan) {
+		if (loan.isOverdue()) {
+			long daysOverdue = Calendar.getInstance().getDaysDifference(loan.getDueDate());
+			double fine = daysOverdue * FINE_PER_DAY;
 			return fine;
 		}
 		return 0.0;		
