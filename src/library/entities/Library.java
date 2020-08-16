@@ -32,7 +32,7 @@ public class Library implements Serializable {
 	private static Library library; 
 
 	private int bookId;
-	private int memberID;
+	private int memberId;
 	private int loanId;
 
 	private Date loanDate;
@@ -50,7 +50,7 @@ public class Library implements Serializable {
 		currentLoans = new HashMap<>();
 		damagedBooks = new HashMap<>();
 		bookId = 1;
-		memberID = 1;		
+		memberId = 1;		
 		loanId = 1;		
 	}
 
@@ -95,8 +95,8 @@ public class Library implements Serializable {
 	}
 	
 	
-	public int getMemberID() {
-		return memberID;
+	public int getMemberId() {
+		return memberId;
 	}
 	
 	
@@ -106,7 +106,7 @@ public class Library implements Serializable {
 
 	
 	private int getNextMemberId() {
-		return memberID++;
+		return memberId++;
 	}
 
 	
@@ -205,7 +205,7 @@ public class Library implements Serializable {
 	public double calculateOverDueFine(Loan loan) {
 		if (loan.isOverDue()) {
 			long daysOverDue = Calendar.getInstance().getDaysDifference(loan.getDueDate());
-			double fInE = daysOverDue * FINE_PER_DAY;
+			double fine = daysOverDue * FINE_PER_DAY;
 			return fine;
 		}
 		return 0.0;		
@@ -214,9 +214,9 @@ public class Library implements Serializable {
 
 	public void dischargeLoan(Loan currentLoan, boolean isDamaged) {
 		Member member = currentLoan.getMember();
-		Book bOoK  = currentLoan.getBook();
+		Book book  = currentLoan.getBook();
 		
-		double overDueFine = calculateOverdueFine(currentLoan);
+		double overdueFine = calculateOverdueFine(currentLoan);
 		member.addFine(overdueFine);	
 		
 		member.dischargeLoan(currentLoan);
@@ -238,8 +238,8 @@ public class Library implements Serializable {
 
 
 	public void repairBook(Book currentBook) {
-		if (damagedBooks.containsKey(currentBook.gEtId())) {
-			currentBook.RePaIr();
+		if (damagedBooks.containsKey(currentBook.getId())) {
+			currentBook.repair();
 			damagedBooks.remove(currentBook.gEtId());
 		}
 		else 

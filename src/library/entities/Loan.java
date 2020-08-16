@@ -17,7 +17,7 @@ public class Loan implements Serializable {
 	private Member member; // Change the variable 'MeMbEr' to 'member'
 	private Date date; // Change the variable 'DaTe' to 'date'
 	private LoanState state; // Change the variable 'StAtE' to 'state'
-
+  
 	
 	public Loan(int loanId, Book book, Member member, Date dueDate) {
 		this.LoAn_Id = loanId;
