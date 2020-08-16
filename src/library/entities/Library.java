@@ -220,7 +220,7 @@ public class Library implements Serializable {
 		member.addFine(overdueFine);	
 		
 		member.dischargeLoan(currentLoan);
-		book.ReTuRn(isDamaged);
+		book.returnStatus(isDamaged);
 		if (isDamaged) {
 			member.addFine(DAMAGE_FEE);
 			damagedBooks.put(book.getId(), book);
@@ -240,7 +240,7 @@ public class Library implements Serializable {
 	public void repairBook(Book currentBook) {
 		if (damagedBooks.containsKey(currentBook.getId())) {
 			currentBook.repair();
-			damagedBooks.remove(currentBook.gEtId());
+			damagedBooks.remove(currentBook.getId());
 		}
 		else 
 			throw new RuntimeException("Library: repairBook: book is not damaged");
