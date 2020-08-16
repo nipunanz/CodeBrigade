@@ -16,6 +16,9 @@ import library.payfine.PayFineControl;
 import library.returnBook.ReturnBookUI;
 import library.returnBook.ReturnBookControl;
 
+//Author   : Dilanka
+//Mediator : Chiranga
+//Reviever : Nipuna
 
 public class Main {
 	
@@ -26,7 +29,7 @@ public class Main {
 	private static SimpleDateFormat SDF;
 	
 	
-	private static String Get_menu() {
+	private static String getMenu() {
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("\nLibrary Main Menu\n\n")
@@ -67,7 +70,7 @@ public class Main {
 				output(b);
 			}
 						
-			MENU = GetMenu();
+			MENU = getMenu();
 			
 			boolean e = false;
 			
@@ -79,43 +82,43 @@ public class Main {
 				switch (c.toUpperCase()) {
 				
 				case "M": 
-					ADD_MEMBER();
+					addMember();
 					break;
 					
 				case "LM": 
-					LIST_MEMBERS();
+					listMembers();
 					break;
 					
 				case "B": 
-					ADD_BOOK();
+					addBook();
 					break;
 					
 				case "LB": 
-					LIST_BOOKS();
+					listBooks();
 					break;
 					
 				case "FB": 
-					FIX_BOOKS();
+					fixBooks();
 					break;
 					
 				case "L": 
-					BORROW_BOOK();
+					borrowBooks();
 					break;
 					
 				case "R": 
-					RETURN_BOOK();
+					returnBook();
 					break;
 					
 				case "LL": 
-					LIST_CURRENT_LOANS();
+					listCurrentLoans();
 					break;
 					
 				case "P": 
-					PAY_FINES();
+					payFines();
 					break;
 					
 				case "T": 
-					INCREMENT_DATE();
+					incrementDate();
 					break;
 					
 				case "Q": 
@@ -127,7 +130,7 @@ public class Main {
 					break;
 				}
 				
-				Library.SaVe();
+				Library.save();
 			}			
 		} catch (RuntimeException e) {
 			output(e);
@@ -141,7 +144,7 @@ public class Main {
 	}
 
 
-	private static void LIST_CURRENT_LOANS() {
+	private static void listCurrentLoans() {
 		output("");
 		for (Loan loan : LIB.listCurrentLoans()) {
 			output(loan + "\n");
@@ -196,7 +199,7 @@ public class Main {
 	}
 
 
-	private static void ADD_BOOK() {
+	private static void addBook() {
 		
 		String author = input("Enter author: ");
 		String title  = input("Enter title: ");

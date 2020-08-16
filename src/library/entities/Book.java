@@ -1,95 +1,113 @@
+
+
 package library.entities;
 import java.io.Serializable;
 
+//Author   :Subhashani
+//Reviewer :Nipuna
+//Mediator :Dilanka
 
 @SuppressWarnings("serial")
 public class Book implements Serializable {
 	
-	private String tItLe;
-	private String AuThOr;
-	private String CALLNO;
-	private int iD;
+
+
+	private String title;  // change the variable 'tItle' to 'title'
+	private String author; // change the variable 'AuThOr' to 'author'
+	private String callNo; // change the variable 'CALLNO' to 'callno'
+	private int id;        // change the variable 'iD' to 'id'
 	
-	private enum sTaTe { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
-	private sTaTe StAtE;
+	private enum State { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
+	private State State;
 	
 	
-	public Book(String author, String title, String callNo, int id) {
-		this.AuThOr = author;
-		this.tItLe = title;
-		this.CALLNO = callNo;
-		this.iD = id;
-		this.StAtE = sTaTe.AVAILABLE;
+	public Book (String author, String title, String callNo, int id) {
+		this.author = author;
+		this.title = title;
+		this.callNo = callNo;
+		this.id = id;
+		this.State = State.AVAILABLE;
 	}
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Book: ").append(iD).append("\n")
-		  .append("  Title:  ").append(tItLe).append("\n")
-		  .append("  Author: ").append(AuThOr).append("\n")
-		  .append("  CallNo: ").append(CALLNO).append("\n")
-		  .append("  State:  ").append(StAtE);
+		sb.append("  Book: ").append(id).append("\n")
+		  .append("  Title:  ").append(title).append("\n")
+		  .append("  Author: ").append(author).append("\n")
+		  .append("  CallNo: ").append(callNo).append("\n")
+		  .append("  State:  ").append(State);
 		
 		return sb.toString();
 	}
 
-	public Integer gEtId() {
-		return iD;
+	public Integer getId() {  // changed method name 'gEtiD' to 'getId'
+		return id;
 	}
 
-	public String gEtTiTlE() {
-		return tItLe;
+	public String getTitle() {  // changed method name 'gEtTitLe' to 'getTitle'
+		return title;
 	}
 
 
 	
-	public boolean iS_AvAiLaBlE() {
-		return StAtE == sTaTe.AVAILABLE;
+	public boolean isAvailable() {
+		return State == State.AVAILABLE;
 	}
 
 	
-	public boolean iS_On_LoAn() {
-		return StAtE == sTaTe.ON_LOAN;
+	public boolean isOnLoan() {
+		return State == State.ON_LOAN;
 	}
 
 	
-	public boolean iS_DaMaGeD() {
-		return StAtE == sTaTe.DAMAGED;
+	public boolean isDamaged() {
+		return State == State.DAMAGED;
 	}
 
 	
-	public void BoRrOw() {
-		if (StAtE.equals(sTaTe.AVAILABLE)) 
-			StAtE = sTaTe.ON_LOAN;
-		
-		else 
-			throw new RuntimeException(String.format("Book: cannot borrow while book is in state: %s", StAtE));
-		
-		
-	}
+	public void borrow() {
+		if (State.equals(State.AVAILABLE))
+		{
 
-
-	public void ReTuRn(boolean DaMaGeD) {
-		if (StAtE.equals(sTaTe.ON_LOAN)) 
-			if (DaMaGeD) 
-				StAtE = sTaTe.DAMAGED;
+ 			State = State.ON_LOAN;
+		}
 			
-			else 
-				StAtE = sTaTe.AVAILABLE;
-			
-		
+		    
 		else 
-			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", StAtE));
-				
+		{
+			throw new RuntimeException(String.format("Book: cannot borrow while book is in state: %s", State));
+		}
+		
+		
+	}
+
+
+	public void returnStatus(boolean damaged) {
+		if (State.equals(State.ON_LOAN)) 
+		{
+			if (damaged) { 
+				State = State.DAMAGED;
+			}	
+			else {
+				State = State.AVAILABLE;
+			}	
+		
+		} else {
+			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", State));
+		}		
 	}
 
 	
-	public void RePaIr() {
-		if (StAtE.equals(sTaTe.DAMAGED)) 
-			StAtE = sTaTe.AVAILABLE;
+	public void repair() {
+		if (State.equals(State.DAMAGED)) 
+		{
+			State = State.AVAILABLE;
+		}
 		
 		else 
-			throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", StAtE));
+		{
+			throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", State));
+		}
 		
 	}
 
