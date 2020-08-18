@@ -33,21 +33,21 @@ public class Main {
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("\nLibrary Main Menu\n\n")
-		  .append("  M  : add member\n")
-		  .append("  LM : list members\n")
+		  .append("  M  : Add member\n")
+		  .append("  LM : List members\n")
 		  .append("\n")
-		  .append("  B  : add book\n")
-		  .append("  LB : list books\n")
-		  .append("  FB : fix books\n")
+		  .append("  B  : Add book\n")
+		  .append("  LB : List books\n")
+		  .append("  FB : Fix books\n")
 		  .append("\n")
-		  .append("  L  : take out a loan\n")
-		  .append("  R  : return a loan\n")
-		  .append("  LL : list loans\n")
+		  .append("  L  : Take out a loan\n")
+		  .append("  R  : Return a loan\n")
+		  .append("  LL : List loans\n")
 		  .append("\n")
-		  .append("  P  : pay fine\n")
+		  .append("  P  : Pay fine\n")
 		  .append("\n")
-		  .append("  T  : increment date\n")
-		  .append("  Q  : quit\n")
+		  .append("  T  : Increment date\n")
+		  .append("  Q  : Quit\n")
 		  .append("\n")
 		  .append("Choice : ");
 		  
@@ -82,43 +82,43 @@ public class Main {
 				switch (c.toUpperCase()) {
 				
 				case "M": 
-					addMember();
+					addMember(); // Changed the method name 'ADD_MEMBER' to 'addMember'
 					break;
 					
 				case "LM": 
-					listMembers();
+					listMembers(); // Changed the method name 'LIST_MEMBERS' to 'addMember'
 					break;
 					
 				case "B": 
-					addBook();
+					addBook(); // Changed the method name 'ADD_BOOK' to 'addMember'
 					break;
 					
 				case "LB": 
-					listBooks();
+					listBooks(); // Changed the method name 'LIST_BOOKS' to 'addMember'
 					break;
 					
 				case "FB": 
-					fixBooks();
+					fixBooks(); // Changed the method name 'FIX_BOOKS' to 'addMember'
 					break;
 					
 				case "L": 
-					borrowBooks();
+					borrowBooks(); // Changed the method name 'BORROW_BOOK' to 'addMember'
 					break;
 					
 				case "R": 
-					returnBook();
+					returnBook(); // Changed the method name 'RETURN_BOOK' to 'addMember'
 					break;
 					
 				case "LL": 
-					listCurrentLoans();
+					listCurrentLoans(); // Changed the method name 'LIST_CURRENT_LOANS' to 'addMember'
 					break;
 					
 				case "P": 
-					payFines();
+					payFines(); // Changed the method name 'PAY_FINES' to 'addMember'
 					break;
 					
 				case "T": 
-					incrementDate();
+					incrementDate(); // Changed the method name 'INCREMENT_DATE' to 'addMember'
 					break;
 					
 				case "Q": 
@@ -139,12 +139,12 @@ public class Main {
 	}	
 
 	
-	private static void payFines() {
+	private static void payFines() { // Chnaged themethod name 'PAY_FINES' to 'payFines'
 		new PayFineUI(new PayFineControl()).run();		
 	}
 
 
-	private static void listCurrentLoans() {
+	private static void listCurrentLoans() { // Chnaged themethod name 'LIST_CURRENT_LOANS' to 'listCurrentLoans'
 		output("");
 		for (Loan loan : LIB.listCurrentLoans()) {
 			output(loan + "\n");
@@ -153,7 +153,7 @@ public class Main {
 
 
 
-	private static void listBooks() {
+	private static void listBooks() { // Chnaged themethod name 'LIST_BOOKS' to 'listBooks'
 		output("");
 		for (Book book : LIB.listBooks()) {
 			output(book + "\n");
@@ -162,7 +162,7 @@ public class Main {
 
 
 
-	private static void listMembers() {
+	private static void listMembers() { // Chnaged themethod name 'LIST_MEMBERS' to 'listMembers'
 		output("");
 		for (Member member : LIB.listMembers()) {
 			output(member + "\n");
@@ -171,22 +171,22 @@ public class Main {
 
 
 
-	private static void borrowBooks() {
+	private static void borrowBooks() { // Chnaged themethod name 'BORROW_BOOK' to 'borrowBooks'
 		new BorrowBookUI(new BorrowBookControl()).run();		
 	}
 
 
-	private static void returnBook() {
+	private static void returnBook() { // Chnaged themethod name 'RETURN_BOOK' to 'returnBook'
 		new ReturnBookUI(new ReturnBookControl()).run();		
 	}
 
 
-	private static void fixBooks() {
+	private static void fixBooks() { // Chnaged themethod name 'FIX_BOOKS' to 'fixBooks'
 		new FixBookUI(new FixBookControl()).run();		
 	}
 
 
-	private static void incrementDate() {
+	private static void incrementDate() { // Chnaged themethod name 'INCREMENT_DATE' to 'incrementDate'
 		try {
 			int days = Integer.valueOf(input("Enter number of days: ")).intValue();
 			CAL.incrementDate(days);
@@ -199,7 +199,7 @@ public class Main {
 	}
 
 
-	private static void addBook() {
+	private static void addBook() { // Chnaged themethod name 'ADD_BOOK' to 'addBook'
 		
 		String author = input("Enter author: ");
 		String title  = input("Enter title: ");
@@ -210,13 +210,13 @@ public class Main {
 	}
 
 	
-	private static void addMember() {
+	private static void addMember() { // Chnaged themethod name 'ADD_MEMBER' to 'addMember'
 		try {
-			String lastName = input("Enter last name: ");
-			String firstName  = input("Enter first name: ");
-			String emailAddress = input("Enter email address: ");
-			int phoneNumber = Integer.valueOf(input("Enter phone number: ")).intValue();
-			Member member = LIB.addMember(lastName, firstName, emailAddress, phoneNumber);
+			String lastName = input("Enter last name: "); // Changed the varibale name 'LaSt_NaMe' to 'lastName'
+			String firstName  = input("Enter first name: "); // Changed the varibale name 'FiRsT_NaMe' to 'lastName'
+			String emailAddress = input("Enter email address: "); // Changed the varibale name 'EmAiL_AdDrEsS' to 'lastName'
+			int phoneNumber = Integer.valueOf(input("Enter phone number: ")).intValue(); // Changed the varibale name 'PhOnE_NuMbEr' to 'lastName'
+			Member member = LIB.addMember(lastName, firstName, emailAddress, phoneNumber); // Changed the varibale name 'MeMbEr' to 'lastName'
 			output("\n" + member + "\n");
 			
 		} catch (NumberFormatException e) {
