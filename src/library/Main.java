@@ -22,11 +22,11 @@ import library.returnBook.ReturnBookControl;
 
 public class Main {
 	
-	private static Scanner IN;
-	private static Library LIB;
+	private static Scanner SCANNER; // Changed the static variable 'IN' to 'SCANNER'
+	private static Library LIBRARY; // Changed the static variable 'LIB' to 'LIBRARY'
 	private static String MENU;
-	private static Calendar CAL;
-	private static SimpleDateFormat SDF;
+	private static Calendar CALENDAR; // Changed the static variable 'CAL' to 'CALENDAR'
+	private static SimpleDateFormat SIMPLE_DATE_FORMAT; // Changed the static variable 'SDF' to 'SIMPLE_DATE_FORMAT'
 	
 	
 	private static String getMenu() {
@@ -57,16 +57,16 @@ public class Main {
 
 	public static void main(String[] args) {		
 		try {			
-			IN = new Scanner(System.in);
-			LIB = Library.getInstance();
-			CAL = Calendar.getInstance();
-			SDF = new SimpleDateFormat("dd/MM/yyyy");
+			SCANNER = new Scanner(System.in);
+			LIBRARY = Library.getInstance();
+			CALENDAR = Calendar.getInstance();
+			SIMPLE_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 	
-			for (Member m : LIB.listMembers()) {
+			for (Member m : LIBRARY.listMembers()) {
 				output(m);
 			}
 			output(" ");
-			for (Book b : LIB.listBooks()) {
+			for (Book b : LIBRARY.listBooks()) {
 				output(b);
 			}
 						
@@ -76,7 +76,7 @@ public class Main {
 			
 			while (!e) {
 				
-				output("\n" + SDF.format(CAL.getDate()));
+				output("\n" + SIMPLE_DATE_FORMAT.format(CALENDAR.getDate()));
 				String c = input(MENU);
 				
 				switch (c.toUpperCase()) {
@@ -146,7 +146,7 @@ public class Main {
 
 	private static void listCurrentLoans() { // Chnaged themethod name 'LIST_CURRENT_LOANS' to 'listCurrentLoans'
 		output("");
-		for (Loan loan : LIB.listCurrentLoans()) {
+		for (Loan loan : LIBRARY.listCurrentLoans()) {
 			output(loan + "\n");
 		}		
 	}
@@ -155,7 +155,7 @@ public class Main {
 
 	private static void listBooks() { // Chnaged themethod name 'LIST_BOOKS' to 'listBooks'
 		output("");
-		for (Book book : LIB.listBooks()) {
+		for (Book book : LIBRARY.listBooks()) {
 			output(book + "\n");
 		}		
 	}
@@ -164,7 +164,7 @@ public class Main {
 
 	private static void listMembers() { // Chnaged themethod name 'LIST_MEMBERS' to 'listMembers'
 		output("");
-		for (Member member : LIB.listMembers()) {
+		for (Member member : LIBRARY.listMembers()) {
 			output(member + "\n");
 		}		
 	}
@@ -189,9 +189,9 @@ public class Main {
 	private static void incrementDate() { // Chnaged themethod name 'INCREMENT_DATE' to 'incrementDate'
 		try {
 			int days = Integer.valueOf(input("Enter number of days: ")).intValue();
-			CAL.incrementDate(days);
-			LIB.checkCurrentLoans();
-			output(SDF.format(CAL.getDate()));
+			CALENDAR.incrementDate(days);
+			LIBRARY.checkCurrentLoans();
+			output(SIMPLE_DATE_FORMAT.format(CALENDAR.getDate()));
 			
 		} catch (NumberFormatException e) {
 			 output("\nInvalid number of days\n");
@@ -204,7 +204,7 @@ public class Main {
 		String author = input("Enter author: ");
 		String title  = input("Enter title: ");
 		String callNumber = input("Enter call number: ");
-		Book book = LIB.addBook(author, title, callNumber);
+		Book book = LIBRARY.addBook(author, title, callNumber);
 		output("\n" + book + "\n");
 		
 	}
@@ -216,7 +216,7 @@ public class Main {
 			String firstName  = input("Enter first name: "); // Changed the varibale name 'FiRsT_NaMe' to 'lastName'
 			String emailAddress = input("Enter email address: "); // Changed the varibale name 'EmAiL_AdDrEsS' to 'lastName'
 			int phoneNumber = Integer.valueOf(input("Enter phone number: ")).intValue(); // Changed the varibale name 'PhOnE_NuMbEr' to 'lastName'
-			Member member = LIB.addMember(lastName, firstName, emailAddress, phoneNumber); // Changed the varibale name 'MeMbEr' to 'lastName'
+			Member member = LIBRARY.addMember(lastName, firstName, emailAddress, phoneNumber); // Changed the varibale name 'MeMbEr' to 'lastName'
 			output("\n" + member + "\n");
 			
 		} catch (NumberFormatException e) {
@@ -228,7 +228,7 @@ public class Main {
 
 	private static String input(String prompt) {
 		System.out.print(prompt);
-		return IN.nextLine();
+		return SCANNER.nextLine();
 	}
 	
 	

@@ -52,17 +52,17 @@ public class Loan implements Serializable {
 	
 	
 	public String toString() {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy"); // Change the variable 'sdf' to 'simpleDateFormat'
 
-		StringBuilder sb = new StringBuilder();
-		sb.append("Loan:  ").append(loanId).append("\n")
+		StringBuilder stringBuilder = new StringBuilder();  // Change the variable 'sb' to 'stringBuilder'
+		stringBuilder.append("Loan:  ").append(loanId).append("\n")
 		  .append("  Borrower ").append(member.getId()).append(" : ")
 		  .append(member.getLastName()).append(", ").append(member.getFirstName()).append("\n")
 		  .append("  Book ").append(book.getId()).append(" : " )
 		  .append(book.getTitle()).append("\n")
-		  .append("  DueDate: ").append(sdf.format(date)).append("\n")
+		  .append("  DueDate: ").append(simpleDateFormat.format(date)).append("\n")
 		  .append("  State: ").append(state);		
-		return sb.toString();
+		return stringBuilder.toString();
 	}
 
 
