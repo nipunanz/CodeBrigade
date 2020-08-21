@@ -26,8 +26,8 @@ public class FixBookControl {  // changed the class name "fIX_bOOK_cONTROL" to "
 	
 	
 	public void setUi(FixBookUI ui) {  // changed the method name "SeT_Ui" to "setUi"
-		if (!state.equals(ControlState.INITIALISED))  // Changed the variable name  "StAtE"  to "state"  // Changed the variable name  "CoNtRoL_StAtE"  to "ControlState"
-		{
+		if (!state.equals(ControlState.INITIALISED)) {  // Changed the variable name  "StAtE"  to "state"  // Changed the variable name  "CoNtRoL_StAtE"  to "ControlState"
+		
 			throw new RuntimeException("FixBookControl: cannot call setUI except in INITIALISED state");
 		
 		}	
@@ -42,26 +42,26 @@ public class FixBookControl {  // changed the class name "fIX_bOOK_cONTROL" to "
 	}
 
 
-<<<<<<< HEAD
+
 	public void bookScanned(int bookId) {  // Changed the class name "BoOk_ScAnNeD" to "bookScanned" // Changed the variable name "BoOkId" to "bookId"
-=======
+
 	public void bookScanned(int bookId) {  // Changed the class name "BoOk_ScAnNeD" to "Bookscanned" // Changed the variable name "BoOkId" to "bookId"
->>>>>>> bb26a4ad932815ed17a2deda6d6edc42756f3b3e
-		if (!state.equals(ControlState.READY)) 
-		{ // Changed the variable name  "StAtE"  to "state"  // Changed the variable name  "CoNtRoL_StAtE"  to "ControlState"
+
+		if (!state.equals(ControlState.READY)){
+		 // Changed the variable name  "StAtE"  to "state"  // Changed the variable name  "CoNtRoL_StAtE"  to "ControlState"
 			throw new RuntimeException("FixBookControl: cannot call bookScanned except in READY state");
 		}	
 		currentBook = library.getBook(bookId); // Changed the variable name "LiBrArY" name to "library"  // Changed the variable name "BoOkId" to "bookId"
 												 // Changed the variable name "CuRrEnT_BoOk" name to "currentBook"
 												// Changed the method name "gEt_BoOk" to "getBook"
 		
-		if (currentBook == null)
-		{  // Changed the variable name "CuRrEnT_BoOk" name to "currentBook"
+		if (currentBook == null){
+		 // Changed the variable name "CuRrEnT_BoOk" name to "currentBook"
 			ui.display("Invalid bookId"); // Changed the method name "Ui.dIsPLAy" to "ui.display"
 			return;
 		}
-		if (!currentBook.isDamaged())  // Changed the "is_Damaged" to "isDamaged"
-		{  // Changed the variable name "CuRrEnT_BoOk" name to "currentBook"  // Changed the method name "iS_DaMaGeD" to "is_Damaged"
+		if (!currentBook.isDamaged()){  // Changed the "is_Damaged" to "isDamaged"
+		  // Changed the variable name "CuRrEnT_BoOk" name to "currentBook"  // Changed the method name "iS_DaMaGeD" to "is_Damaged"
 			ui.display("Book has not been damaged"); // Changed the method name "Ui.dIsPLAy" to "ui.display"
 			return;
 		}
@@ -71,16 +71,16 @@ public class FixBookControl {  // changed the class name "fIX_bOOK_cONTROL" to "
 	}
 
 
-<<<<<<< HEAD
-	public void FiX_BoOk(boolean mustFix) { // Changed the variable name "mUsT_FiX" to "mustFix" // Changed the method name "FiX_BoOk" to "fixBook"
-=======
+
+	
+
 	public void fixBook(boolean mustFix) { // Changed the variable name "mUsT_FiX" to "mustFix"
->>>>>>> bb26a4ad932815ed17a2deda6d6edc42756f3b3e
-		if (!state.equals(ControlState.FIXING))  // Changed the variable name  "StAtE"  to "state" // Changed the variable name  "CoNtRoL_StAtE"  to "ControlState"
+
+		if (!state.equals(ControlState.FIXING)) { // Changed the variable name  "StAtE"  to "state" // Changed the variable name  "CoNtRoL_StAtE"  to "ControlState"
 			throw new RuntimeException("FixBookControl: cannot call fixBook except in FIXING state");
-			
-		if (mustFix)  // Changed the variable name  "mUsT_FiX" to "mustFix"
-		{
+		}	
+		if (mustFix){ // Changed the variable name  "mUsT_FiX" to "mustFix"
+		
 			library.repairBook(currentBook);  // Changed the variable name "LiBrArY" name to "library" // Changed the varibale name "RePaIr_BoOk" to "repairBook"
 												// Changed the variable name "CuRrEnT_BoOk" name to "currentBook"
 		}
