@@ -8,6 +8,19 @@ import java.util.Scanner;
 
 public class FixBookUI {  
 
+<<<<<<< HEAD
+	public static enum UiState { INITIALISED, READY, FIXING, COMPLETED }; // Changed the enum name "uI_sTaTe" to "UiState"
+
+	private FixBookcontrol control;  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable type to "Fix_Book_control"
+	private Scanner input;  // changed the variable name "InPuT" to "input"
+	private UiState state;  // Changed the enum name "uI_sTaTe" to "UiState"  // Changed the variable name "StAtE" to "state"
+
+	
+	public FixBookUI(FixBookControl control) {  // changed the class name  to "Fix_Book_control"
+		this.control = control;
+		input = new Scanner(System.in);  // changed the variable name "InPuT" to "input"
+		state = UiState.INITIALISED;  // Changed the enum name "uI_sTaTe" to "UiState"  // Changed the variable name "StAtE" to "state"
+=======
 	public static enum UiState { INITIALISED, READY, FIXING, COMPLETED }; // Changed the enum name "uI_sTaTe" to "Ui_State"
 
 	private FixBookControl control;  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable type to "Fix_Book_control"
@@ -19,6 +32,7 @@ public class FixBookUI {
 		this.control = control;
 		input = new Scanner(System.in);  // changed the variable name "InPuT" to "input"
 		state = UiState.INITIALISED;  // Changed the enum name "uI_sTaTe" to "Ui_State"  // Changed the variable name "StAtE" to "state"
+>>>>>>> bb26a4ad932815ed17a2deda6d6edc42756f3b3e
 		control.setUi(this);  // Changed the variable name "CoNtRoL"  to "control"  // Changed the method name "SeT_Ui"  to "setUi"
 	}
 
@@ -36,16 +50,27 @@ public class FixBookUI {
 			switch (state) {  // Changed the variable name "StAtE" to "state"
 			
 			case READY:
+<<<<<<< HEAD
+				String bookEntryString = input("Scan Book (<enter> completes): ");  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"  // Changed the method type "iNpUt" to "input"
+				if (bookEntryString.length() == 0)  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"
+				{
+					control.scanningComplete();  // Changed the variable name "CoNtRoL"  to "control"  // Changed the method name "SCannING_COMplete" to "scanningComplete"
+=======
 				String bookEntryString = input("Scan Book (<enter> completes): ");  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"
 				if (bookEntryString.length() == 0){  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"
 				
 					control.scanningComplete();  // Changed the variable name "CoNtRoL"  to "control"  // Changed the method name "SCannING_COMplete" to "Scanning_Complete"
+>>>>>>> bb26a4ad932815ed17a2deda6d6edc42756f3b3e
 				}
 				
 				else {
 					try {
 						int bookId = Integer.valueOf(bookEntryString).intValue();  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"  // changed the variable name "BoOk_Id" to "bookId"
+<<<<<<< HEAD
+						control.bookScanned(bookId);  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable name "BoOk_Id" to "bookId" // Changed the method name "BoOk_ScAnNeD" to "bookScanned"
+=======
 						control.bookScanned(bookId);  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable name "BoOk_Id" to "bookId"
+>>>>>>> bb26a4ad932815ed17a2deda6d6edc42756f3b3e
 					}
 					catch (NumberFormatException e) {
 						output("Invalid bookId");  // Changed the method name "OuTpUt" to "output"
