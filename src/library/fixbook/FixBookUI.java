@@ -11,7 +11,7 @@ public class FixBookUI {
 
 	public static enum UiState { INITIALISED, READY, FIXING, COMPLETED }; // Changed the enum name "uI_sTaTe" to "UiState"
 
-	private FixBookcontrol control;  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable type to "Fix_Book_control"
+	private FixBookControl control;  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable type to "Fix_Book_control"
 	private Scanner input;  // changed the variable name "InPuT" to "input"
 	private UiState state;  // Changed the enum name "uI_sTaTe" to "UiState"  // Changed the variable name "StAtE" to "state"
 
