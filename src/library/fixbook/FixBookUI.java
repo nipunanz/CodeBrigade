@@ -16,17 +16,7 @@ public class FixBookUI {
 	private UiState state;  // Changed the enum name "uI_sTaTe" to "UiState"  // Changed the variable name "StAtE" to "state"
 
 	
-	public FixBookUI(FixBookControl control) {  // changed the class name  to "Fix_Book_control"
-		this.control = control;
-		input = new Scanner(System.in);  // changed the variable name "InPuT" to "input"
-		state = UiState.INITIALISED;  // Changed the enum name "uI_sTaTe" to "UiState"  // Changed the variable name "StAtE" to "state"
-
-	public static enum UiState { INITIALISED, READY, FIXING, COMPLETED }; // Changed the enum name "uI_sTaTe" to "Ui_State"
-
-	private FixBookControl control;  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable type to "Fix_Book_control"
-	private Scanner input;  // changed the variable name "InPuT" to "input"
-	private UiState state;  // Changed the enum name "uI_sTaTe" to "Ui_State"  // Changed the variable name "StAtE" to "state"
-
+	
 	
 	public FixBookUI(FixBookControl control) {  // changed the variable type to "Fix_Book_control"
 		this.control = control;
@@ -55,11 +45,7 @@ public class FixBookUI {
 				
 					control.scanningComplete();  // Changed the variable name "CoNtRoL"  to "control"  // Changed the method name "SCannING_COMplete" to "scanningComplete"
 
-				String bookEntryString = input("Scan Book (<enter> completes): ");  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"
-				if (bookEntryString.length() == 0){  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"
 				
-					control.scanningComplete();  // Changed the variable name "CoNtRoL"  to "control"  // Changed the method name "SCannING_COMplete" to "Scanning_Complete"
-
 				}
 				
 				else {
