@@ -9,8 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Calendar {
 	
-	private static Calendar self; // changed variable "sElF" to "self"
-	private static java.util.Calendar calendar; // changed variable "cAlEnDaR" to "calendar"
+	private static Calendar self; // changed the variable "sElF" to "self"
+	private static java.util.Calendar calendar; // changed the variable "cAlEnDaR" to "calendar"
 	
 	
 	private Calendar() {
