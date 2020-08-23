@@ -132,20 +132,19 @@ public class Main {
 				
 				Library.save();
 			}			
-		} 
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			output(e);
 		}		
 		output("\nEnded\n");
 	}	
 
 	
-	private static void payFines() { // Chnaged the method name 'PAY_FINES' to 'payFines'
+	private static void payFines() { // Chnaged themethod name 'PAY_FINES' to 'payFines'
 		new PayFineUI(new PayFineControl()).run();		
 	}
 
 
-	private static void listCurrentLoans() { // Chnaged the method name 'LIST_CURRENT_LOANS' to 'listCurrentLoans'
+	private static void listCurrentLoans() { // Chnaged themethod name 'LIST_CURRENT_LOANS' to 'listCurrentLoans'
 		output("");
 		for (Loan loan : LIBRARY.listCurrentLoans()) {
 			output(loan + "\n");
@@ -154,7 +153,7 @@ public class Main {
 
 
 
-	private static void listBooks() { // Chnaged the method name 'LIST_BOOKS' to 'listBooks'
+	private static void listBooks() { // Chnaged themethod name 'LIST_BOOKS' to 'listBooks'
 		output("");
 		for (Book book : LIBRARY.listBooks()) {
 			output(book + "\n");
@@ -163,7 +162,7 @@ public class Main {
 
 
 
-	private static void listMembers() { // Chnaged the method name 'LIST_MEMBERS' to 'listMembers'
+	private static void listMembers() { // Chnaged themethod name 'LIST_MEMBERS' to 'listMembers'
 		output("");
 		for (Member member : LIBRARY.listMembers()) {
 			output(member + "\n");
@@ -172,47 +171,46 @@ public class Main {
 
 
 
-	private static void borrowBooks() { // Chnaged the method name 'BORROW_BOOK' to 'borrowBooks'
+	private static void borrowBooks() { // Chnaged themethod name 'BORROW_BOOK' to 'borrowBooks'
 		new BorrowBookUI(new BorrowBookControl()).run();		
 	}
 
 
-	private static void returnBook() { // Chnaged the method name 'RETURN_BOOK' to 'returnBook'
+	private static void returnBook() { // Chnaged themethod name 'RETURN_BOOK' to 'returnBook'
 		new ReturnBookUI(new ReturnBookControl()).run();		
 	}
 
 
-	private static void fixBooks() { // Chnaged the method name 'FIX_BOOKS' to 'fixBooks'
+	private static void fixBooks() { // Chnaged themethod name 'FIX_BOOKS' to 'fixBooks'
 		new FixBookUI(new FixBookControl()).run();		
 	}
 
 
-	private static void incrementDate() { // Chnaged the method name 'INCREMENT_DATE' to 'incrementDate'
+	private static void incrementDate() { // Chnaged themethod name 'INCREMENT_DATE' to 'incrementDate'
 		try {
 			int days = Integer.valueOf(input("Enter number of days: ")).intValue();
 			CALENDAR.incrementDate(days);
 			LIBRARY.checkCurrentLoans();
 			output(SIMPLE_DATE_FORMAT.format(CALENDAR.getDate()));
 			
-		} 
-		catch (NumberFormatException e) {
+		} catch (NumberFormatException e) {
 			 output("\nInvalid number of days\n");
 		}
 	}
 
 
-	private static void addBook() { // Chnaged the method name 'ADD_BOOK' to 'addBook'
+	private static void addBook() { // Chnaged themethod name 'ADD_BOOK' to 'addBook'
 		
-		String author = input("Enter author: "); // Chnaged the variable name 'AuThOr' to 'author'
-		String title  = input("Enter title: "); // Chnaged the variable name 'TiTlE' to 'title'
-		String callNumber = input("Enter call number: "); // Chnaged the variable name 'CaLl_NuMbEr' to 'callNumber'
-		Book book = LIBRARY.addBook(author, title, callNumber); // Chnaged the variable name 'BoOk' to 'book'
+		String author = input("Enter author: ");
+		String title  = input("Enter title: ");
+		String callNumber = input("Enter call number: ");
+		Book book = LIBRARY.addBook(author, title, callNumber);
 		output("\n" + book + "\n");
 		
 	}
 
 	
-	private static void addMember() { // Chnaged the method name 'ADD_MEMBER' to 'addMember'
+	private static void addMember() { // Chnaged themethod name 'ADD_MEMBER' to 'addMember'
 		try {
 			String lastName = input("Enter last name: "); // Changed the varibale name 'LaSt_NaMe' to 'lastName'
 			String firstName  = input("Enter first name: "); // Changed the varibale name 'FiRsT_NaMe' to 'lastName'
@@ -221,8 +219,7 @@ public class Main {
 			Member member = LIBRARY.addMember(lastName, firstName, emailAddress, phoneNumber); // Changed the varibale name 'MeMbEr' to 'lastName'
 			output("\n" + member + "\n");
 			
-		} 
-		catch (NumberFormatException e) {
+		} catch (NumberFormatException e) {
 			 output("\nInvalid phone number\n");
 		}
 		
