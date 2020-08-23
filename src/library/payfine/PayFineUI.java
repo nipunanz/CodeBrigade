@@ -19,16 +19,16 @@ public class PayFineUI {
 		this.control = control; // "CoNtRoL" to "control"
 		input = new Scanner(System.in);
 		state = UiState.INITIALISED; // changed variable name "uI_sTaTe" to "UiState" & "StAtE" to "state"
-		control.setUi(this); // changed method "SeT_uI" to "setUi"
+		control.setUi(this); // chnaged method "SeT_uI" to "setUi"
 	}
 	
 	
 	public void setState(UiState state) {// changed variable name "uI_sTaTe" to "UiState" & "SeT_StAtE" to "setState"
-		this.state = state; // changed "StAtE" to "state"
+		this.state = state; // chnaged "StAtE" to "state"
 	}
 
 
-	public void run() { // changed "RuN" to "run"
+	public void run() { // chnaged "RuN" to "run"
 		output("Pay Fine Use Case UI\n");
 		
 		while (true) {
@@ -78,7 +78,7 @@ public class PayFineUI {
 			
 			default:
 				output("Unhandled state");
-				throw new RuntimeException("FixBookUI : unhandled state :" + state); // chanaged variable "StAtE" to "state"		
+				throw new RuntimeException("FixBookUI : unhandled state :" + state); // chanaged "StAtE" to "state"		
 			
 			}		
 		}		
@@ -96,7 +96,7 @@ public class PayFineUI {
 	}	
 			
 
-	public void display(Object object) { // changed method name "DiSplAY" to "display"
+	public void display(Object object) { // changed "DiSplAY" to "display"
 		output(object);
 	}
 

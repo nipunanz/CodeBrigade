@@ -6,7 +6,7 @@ import library.entities.Member;
 // Reviewer : Dilanka
 // Mediator : Subhashini
 
-public class PayFineControl { // changed the class name "pAY_fINE_cONTROL" to "PayFineControl"***
+public class PayFineControl { // changed class name "pAY_fINE_cONTROL" to "PayFineControl"***
 	
 	private PayFineUI ui; // changed "PayFineUI" to "payFineUi" & changed  "Ui" to "ui"//
 	private enum ControlState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED }; // changed variable "cOnTrOl_sTaTe" to "ControlState"
@@ -22,7 +22,7 @@ public class PayFineControl { // changed the class name "pAY_fINE_cONTROL" to "P
 	}
 	
 	
-	public void setUi(PayFineUI ui) { // changed method "SeT_uI" to "setUi" // ui
+	public void setUi(PayFineUI ui) { // changed  "SeT_uI" to "setUi" // ui
 		if (!state.equals(ControlState.INITIALISED)) { // changed  "cOnTrOl_sTaTe" to "ControlState" &  changed  "StAtE" to "state"
 			throw new RuntimeException("PayFineControl: cannot call setUI except in INITIALISED state");
 		}	
