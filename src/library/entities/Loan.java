@@ -29,8 +29,7 @@ public class Loan implements Serializable {
 
 	
 	public void checkOverdue() { // Changed the method 'cHeCk_OvEr_DuE' to 'checkOverdue'
-		if (state == LoanState.CURRENT &&
-			Calendar.getInstance().getDate().after(date)) {
+		if (state == LoanState.CURRENT && Calendar.getInstance().getDate().after(date)) {
 			this.state = LoanState.OVER_DUE;			
 		}
 	}
