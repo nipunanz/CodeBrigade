@@ -156,8 +156,9 @@ public class Library implements Serializable {
 
 	
 	public Book getBook(int bookId) {
-		if (catelog.containsKey(bookId)) 
-			return catelog.get(bookId);		
+		if (catelog.containsKey(bookId)) {
+		    return catelog.get(bookId);
+		}
 		return null;
 	}
 
@@ -236,9 +237,9 @@ public class Library implements Serializable {
 
 
 	public void checkCurrentLoans() {
-		for (Loan loan : currentLoans.values()) 
-		    loan.checkOverdue();
-				
+		for (Loan loan : currentLoans.values()) {
+			loan.checkOverdue();
+		}
 	}
 
 
@@ -247,10 +248,9 @@ public class Library implements Serializable {
 			currentBook.repair();
 			damagedBooks.remove(currentBook.getId());
 		}
-		else 
+		else {
 			throw new RuntimeException("Library: repairBook: book is not damaged");
-		
-		
+		}
 	}
 	
 	
