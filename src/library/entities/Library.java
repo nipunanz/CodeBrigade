@@ -140,7 +140,7 @@ public class Library implements Serializable {
 
 	
 	public Book addBook(String a, String t, String c) {	
-		int bookId = getNextBookId()
+		int bookId = getNextBookId();
 		Book b = new Book(a, t, c, bookId);
 		catelog.put(b.getId(), b);		
 		return b;
