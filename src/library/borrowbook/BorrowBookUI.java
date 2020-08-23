@@ -83,7 +83,8 @@ public class BorrowBookUI {
 					int bookId = Integer.valueOf(bookStringInput).intValue();
 					control.scanned(bookId);
 					
-				} catch (NumberFormatException e) {
+				} 
+				catch (NumberFormatException e) {
 					output("Invalid Book Id");
 				} 
 				break;
@@ -94,7 +95,8 @@ public class BorrowBookUI {
 				if (ans.toUpperCase().equals("N")) {
 					control.cancel();
 					
-				} else {
+				}
+				else {
 					control.commitLoans();
 					input("Press <any key> to complete ");
 				}
