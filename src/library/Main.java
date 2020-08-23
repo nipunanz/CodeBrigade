@@ -132,7 +132,8 @@ public class Main {
 				
 				Library.save();
 			}			
-		} catch (RuntimeException e) {
+		} 
+		catch (RuntimeException e) {
 			output(e);
 		}		
 		output("\nEnded\n");
@@ -193,7 +194,8 @@ public class Main {
 			LIBRARY.checkCurrentLoans();
 			output(SIMPLE_DATE_FORMAT.format(CALENDAR.getDate()));
 			
-		} catch (NumberFormatException e) {
+		} 
+		catch (NumberFormatException e) {
 			 output("\nInvalid number of days\n");
 		}
 	}
