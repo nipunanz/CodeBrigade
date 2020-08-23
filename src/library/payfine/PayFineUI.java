@@ -15,7 +15,7 @@ public class PayFineUI {
 	private UiState state; // changed the variable name "uI_sTaTe" to "UiState" & "StAtE" to "state"
 
 	
-	public PayFineUI(PayFineControl control) { // chnage "CoNtRoL" to "control"
+	public PayFineUI(PayFineControl control) { // changed "CoNtRoL" to "control"
 		this.control = control; // "CoNtRoL" to "control"
 		input = new Scanner(System.in);
 		state = UiState.INITIALISED; // changed variable name "uI_sTaTe" to "UiState" & "StAtE" to "state"
