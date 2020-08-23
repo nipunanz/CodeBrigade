@@ -90,7 +90,8 @@ public class BorrowBookControl {
 	public void complete() {
 		if (pendingList.size() == 0) {
 			cancel();
-		} else {
+		}
+		else {
 			ui.display("\nFinal Borrowing List");
 			for (Book book : pendingList) {
 				ui.display(book.toString());

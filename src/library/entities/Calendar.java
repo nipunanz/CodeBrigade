@@ -9,8 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Calendar {
 	
-	private static Calendar self; // changed variable "sElF" to "self"
-	private static java.util.Calendar calendar; // changed variable "cAlEnDaR" to "calendar"
+	private static Calendar self; // changed the variable "sElF" to "self"
+	private static java.util.Calendar calendar; // changed the variable "cAlEnDaR" to "calendar"
 	
 	
 	private Calendar() {
@@ -30,7 +30,7 @@ public class Calendar {
 	
 	public synchronized void setDate(Date date) { // changed method "SeT_DaTe" to "setDate" & // changed  "Date DaTe" to "Date Date"
 		try {
-			calendar.setTime(date);// changed method "cAlEnDaR" to "calendar" & // changed  "DaTe" to "Date"
+		calendar.setTime(date);// changed method "cAlEnDaR" to "calendar" & // changed  "DaTe" to "Date"
 	        calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);  // changed method "cAlEnDaR" to "calendar"
 	        calendar.set(java.util.Calendar.MINUTE, 0); // changed method "cAlEnDaR" to "calendar" 
 	        calendar.set(java.util.Calendar.SECOND, 0);  // changed method "cAlEnDaR" to "calendar"
@@ -63,7 +63,7 @@ public class Calendar {
 	
 	public synchronized long getDaysDifference(Date targetDate) { // changed method "GeT_DaYs_DiFfErEnCe" to "getDaysDifferrence"
 		
-		long diffMillis = getDate().getTime() - targetDate.getTime(); // changed method "gEt_DaTe" to "getDate" & changed "Diff_Mills" to "diffMillis"
+	    long diffMillis = getDate().getTime() - targetDate.getTime(); // changed method "gEt_DaTe" to "getDate" & changed "Diff_Mills" to "diffMillis"
 	    long diffDay = TimeUnit.DAYS.convert(diffMillis, TimeUnit.MILLISECONDS); // changed method "Diff_Day" to "diffDay"
 	    return diffDay;
 	}
