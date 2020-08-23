@@ -66,15 +66,15 @@ public class Book implements Serializable {
 
 	
 	public void borrow() {
-		if (State.equals(State.AVAILABLE))
-		{
+		if (State.equals(State.AVAILABLE)) {
+		
 
  			State = State.ON_LOAN;
 		}
 			
 		    
-		else 
-		{
+		else { 
+		
 			throw new RuntimeException(String.format("Book: cannot borrow while book is in state: %s", State));
 		}
 		
@@ -83,8 +83,8 @@ public class Book implements Serializable {
 
 
 	public void returnStatus(boolean damaged) {
-		if (State.equals(State.ON_LOAN)) 
-		{
+		if (State.equals(State.ON_LOAN)) {
+		
 			if (damaged) { 
 				State = State.DAMAGED;
 			}	
@@ -92,20 +92,21 @@ public class Book implements Serializable {
 				State = State.AVAILABLE;
 			}	
 		
-		} else {
+		} 
+		else {
 			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", State));
 		}		
 	}
 
 	
 	public void repair() {
-		if (State.equals(State.DAMAGED)) 
-		{
+		if (State.equals(State.DAMAGED)) {
+		
 			State = State.AVAILABLE;
 		}
 		
-		else 
-		{
+		else { 
+		
 			throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", State));
 		}
 		
