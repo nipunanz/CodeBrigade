@@ -8,27 +8,27 @@ import java.util.Scanner;
 public class PayFineUI {
 
 
-	public static enum UiState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED }; // changed variable name "uI_sTaTe" to "UiState"
+	public static enum UiState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED }; // changed the variable name "uI_sTaTe" to "UiState"
 
-	private PayFineControl control; // changed variable name "pAY_fINE_cONTROL" to "payFineControl" & "CoNtRoL" to "control"
+	private PayFineControl control; // changed the variable name "pAY_fINE_cONTROL" to "payFineControl" & "CoNtRoL" to "control"
 	private Scanner input;
-	private UiState state; // changed variable name "uI_sTaTe" to "UiState" & "StAtE" to "state"
+	private UiState state; // changed the variable name "uI_sTaTe" to "UiState" & "StAtE" to "state"
 
 	
 	public PayFineUI(PayFineControl control) { // chnage "CoNtRoL" to "control"
 		this.control = control; // "CoNtRoL" to "control"
 		input = new Scanner(System.in);
 		state = UiState.INITIALISED; // changed variable name "uI_sTaTe" to "UiState" & "StAtE" to "state"
-		control.setUi(this); // chnaged method "SeT_uI" to "setUi"
+		control.setUi(this); // changed method "SeT_uI" to "setUi"
 	}
 	
 	
 	public void setState(UiState state) {// changed variable name "uI_sTaTe" to "UiState" & "SeT_StAtE" to "setState"
-		this.state = state; // chnaged "StAtE" to "state"
+		this.state = state; // changed "StAtE" to "state"
 	}
 
 
-	public void run() { // chnaged "RuN" to "run"
+	public void run() { // changed "RuN" to "run"
 		output("Pay Fine Use Case UI\n");
 		
 		while (true) {
@@ -60,7 +60,9 @@ public class PayFineUI {
 				try {
 					amount = Double.valueOf(amtStr).doubleValue(); // changed "AmouNT" to "amount" & "Amt_Str" to "amtStr"
 				}
-				catch (NumberFormatException e) {}
+				catch (NumberFormatException e) {
+					output("Invalid number format");
+				}
 				if (amount <= 0) { // changed "AmouNT" to "amount"  
 					output("Amount must be positive");
 					break;
@@ -78,7 +80,7 @@ public class PayFineUI {
 			
 			default:
 				output("Unhandled state");
-				throw new RuntimeException("FixBookUI : unhandled state :" + state); // chanaged "StAtE" to "state"		
+				throw new RuntimeException("FixBookUI : unhandled state :" + state); // chanaged variable "StAtE" to "state"		
 			
 			}		
 		}		
@@ -96,7 +98,7 @@ public class PayFineUI {
 	}	
 			
 
-	public void display(Object object) { // changed "DiSplAY" to "display"
+	public void display(Object object) { // changed the method name "DiSplAY" to "display"
 		output(object);
 	}
 

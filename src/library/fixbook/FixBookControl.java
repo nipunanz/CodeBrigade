@@ -43,8 +43,7 @@ public class FixBookControl {  // changed the class name "fIX_bOOK_cONTROL" to "
 
 
 
-	public void bookScanned(int bookId) {  // Changed the class name "BoOk_ScAnNeD" to "bookScanned" // Changed the variable name "BoOkId" to "bookId"
-
+	
 	public void bookScanned(int bookId) {  // Changed the class name "BoOk_ScAnNeD" to "Bookscanned" // Changed the variable name "BoOkId" to "bookId"
 
 		if (!state.equals(ControlState.READY)) {
@@ -60,7 +59,7 @@ public class FixBookControl {  // changed the class name "fIX_bOOK_cONTROL" to "
 			ui.display("Invalid bookId"); // Changed the method name "Ui.dIsPLAy" to "ui.display"
 			return;
 		}
-		if (!currentBook.isDamaged()){  // Changed the "is_Damaged" to "isDamaged"
+		if (!currentBook.isDamaged()) {  // Changed the "is_Damaged" to "isDamaged"
 		  // Changed the variable name "CuRrEnT_BoOk" name to "currentBook"  // Changed the method name "iS_DaMaGeD" to "is_Damaged"
 			ui.display("Book has not been damaged"); // Changed the method name "Ui.dIsPLAy" to "ui.display"
 			return;

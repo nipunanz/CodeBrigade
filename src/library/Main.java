@@ -132,7 +132,8 @@ public class Main {
 				
 				Library.save();
 			}			
-		} catch (RuntimeException e) {
+		} 
+		catch (RuntimeException e) {
 			output(e);
 		}		
 		output("\nEnded\n");
@@ -193,7 +194,8 @@ public class Main {
 			LIBRARY.checkCurrentLoans();
 			output(SIMPLE_DATE_FORMAT.format(CALENDAR.getDate()));
 			
-		} catch (NumberFormatException e) {
+		} 
+		catch (NumberFormatException e) {
 			 output("\nInvalid number of days\n");
 		}
 	}
@@ -219,7 +221,8 @@ public class Main {
 			Member member = LIBRARY.addMember(lastName, firstName, emailAddress, phoneNumber); // Changed the varibale name 'MeMbEr' to 'lastName'
 			output("\n" + member + "\n");
 			
-		} catch (NumberFormatException e) {
+		} 
+		catch (NumberFormatException e) {
 			 output("\nInvalid phone number\n");
 		}
 		
