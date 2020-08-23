@@ -8,11 +8,11 @@ import java.util.Scanner;
 public class PayFineUI {
 
 
-	public static enum UiState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED }; // changed variable name "uI_sTaTe" to "UiState"
+	public static enum UiState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED }; // changed the variable name "uI_sTaTe" to "UiState"
 
-	private PayFineControl control; // changed variable name "pAY_fINE_cONTROL" to "payFineControl" & "CoNtRoL" to "control"
+	private PayFineControl control; // changed the variable name "pAY_fINE_cONTROL" to "payFineControl" & "CoNtRoL" to "control"
 	private Scanner input;
-	private UiState state; // changed variable name "uI_sTaTe" to "UiState" & "StAtE" to "state"
+	private UiState state; // changed the variable name "uI_sTaTe" to "UiState" & "StAtE" to "state"
 
 	
 	public PayFineUI(PayFineControl control) { // chnage "CoNtRoL" to "control"
@@ -98,7 +98,7 @@ public class PayFineUI {
 	}	
 			
 
-	public void display(Object object) { // changed method name "DiSplAY" to "display"
+	public void display(Object object) { // changed the method name "DiSplAY" to "display"
 		output(object);
 	}
 
