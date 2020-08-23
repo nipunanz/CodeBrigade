@@ -43,8 +43,8 @@ public class Member implements Serializable {
 		  .append(String.format("  Fines Owed :  $%.2f", finesOwing))
 		  .append("\n");
 		
-		for (Loan LoAn : currentLoans.values()) {
-			sb.append(LoAn).append("\n");
+		for (Loan loan : currentLoans.values()) {
+			sb.append(loan).append("\n");
 		}		  
 		return sb.toString();
 	}
@@ -71,9 +71,10 @@ public class Member implements Serializable {
 
 	
 	public void takeOutLoan(Loan loan) {
-		if (!currentLoans.containsKey(loan.getId())) {
-			currentLoans.put(loan.getId(), loan);
-		}else {
+		int loanId = loan.getId();
+		if (!currentLoans.containsKey(loanId)) {
+			currentLoans.put(loanId, loan);
+		} else {
 			throw new RuntimeException("Duplicate loan added to member");
 		}
 				
