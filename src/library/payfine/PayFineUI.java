@@ -60,7 +60,9 @@ public class PayFineUI {
 				try {
 					amount = Double.valueOf(amtStr).doubleValue(); // changed "AmouNT" to "amount" & "Amt_Str" to "amtStr"
 				}
-				catch (NumberFormatException e) {}
+				catch (NumberFormatException e) {
+					output("Invalid number format");
+				}
 				if (amount <= 0) { // changed "AmouNT" to "amount"  
 					output("Amount must be positive");
 					break;
