@@ -54,8 +54,7 @@ public class FixBookUI {
 
 						control.bookScanned(bookId);  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable name "BoOk_Id" to "bookId" // Changed the method name "BoOk_ScAnNeD" to "bookScanned"
 
-						control.bookScanned(bookId);  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable name "BoOk_Id" to "bookId"
-
+						
 					}
 					catch (NumberFormatException e) {
 						output("Invalid bookId");  // Changed the method name "OuTpUt" to "output"
@@ -66,7 +65,7 @@ public class FixBookUI {
 			case FIXING:
 				String ans = input("Fix Book? (Y/N) : ");  // Changed the variable name "AnS" to "ans" // changed the method name "iNpUt" to "input"
 				boolean fix = false;  // Changed the variable name "FiX" to "fix"
-				if (ans.toUpperCase().equals("Y")){ // Changed the variable name "AnS" to "ans"
+				if (ans.toUpperCase().equals("Y")) { // Changed the variable name "AnS" to "ans"
 					fix = true; // Changed the variable name "FiX" to "fix"
 				
 				control.fixBook(fix);  // Changed the variable name "CoNtRoL"  to "control"  // Changed the method name "FiX_BoOk" to fixBook  // Changed the variable name "FiX" to "fix"
