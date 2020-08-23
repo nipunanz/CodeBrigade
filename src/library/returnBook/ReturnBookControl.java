@@ -3,6 +3,10 @@ import library.entities.Book;
 import library.entities.Library;
 import library.entities.Loan;
 
+//Author   : Dilanka
+//Mediator : Chiranga
+//Reviever : Nipuna
+
 public class ReturnBookControl { // Change class name 'rETURN_bOOK_cONTROL' to 'ReturnBookControl'
 
 	private ReturnBookUI ui; // Change variable name 'Ui' to 'ui'
@@ -24,7 +28,7 @@ public class ReturnBookControl { // Change class name 'rETURN_bOOK_cONTROL' to '
 			throw new RuntimeException("ReturnBookControl: cannot call setUI except in INITIALISED state");
 		}
 		this.ui = ui;
-		ui.setState(ReturnBookUI.uiState.READY);
+		ui.setState(ReturnBookUI.UiState.READY);
 		state = ControlState.READY;		
 	}
 

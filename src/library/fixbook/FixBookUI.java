@@ -1,68 +1,98 @@
 package library.fixbook;
 import java.util.Scanner;
 
+//Author   :Subhashani
+//Reviewer :Chiranga
+//Mediator :Nipuna
 
-public class FixBookUI {
 
-	public static enum uI_sTaTe { INITIALISED, READY, FIXING, COMPLETED };
+public class FixBookUI {  
 
-	private fIX_bOOK_cONTROL CoNtRoL;
-	private Scanner InPuT;
-	private uI_sTaTe StAtE;
+
+	public static enum UiState { INITIALISED, READY, FIXING, COMPLETED }; // Changed the enum name "uI_sTaTe" to "UiState"
+
+	private FixBookcontrol control;  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable type to "Fix_Book_control"
+	private Scanner input;  // changed the variable name "InPuT" to "input"
+	private UiState state;  // Changed the enum name "uI_sTaTe" to "UiState"  // Changed the variable name "StAtE" to "state"
 
 	
-	public FixBookUI(fIX_bOOK_cONTROL CoNtRoL) {
-		this.CoNtRoL = CoNtRoL;
-		InPuT = new Scanner(System.in);
-		StAtE = uI_sTaTe.INITIALISED;
-		CoNtRoL.SeT_Ui(this);
+	public FixBookUI(FixBookControl control) {  // changed the class name  to "Fix_Book_control"
+		this.control = control;
+		input = new Scanner(System.in);  // changed the variable name "InPuT" to "input"
+		state = UiState.INITIALISED;  // Changed the enum name "uI_sTaTe" to "UiState"  // Changed the variable name "StAtE" to "state"
+
+	public static enum UiState { INITIALISED, READY, FIXING, COMPLETED }; // Changed the enum name "uI_sTaTe" to "Ui_State"
+
+	private FixBookControl control;  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable type to "Fix_Book_control"
+	private Scanner input;  // changed the variable name "InPuT" to "input"
+	private UiState state;  // Changed the enum name "uI_sTaTe" to "Ui_State"  // Changed the variable name "StAtE" to "state"
+
+	
+	public FixBookUI(FixBookControl control) {  // changed the variable type to "Fix_Book_control"
+		this.control = control;
+		input = new Scanner(System.in);  // changed the variable name "InPuT" to "input"
+		state = UiState.INITIALISED;  // Changed the enum name "uI_sTaTe" to "Ui_State"  // Changed the variable name "StAtE" to "state"
+		control.setUi(this);  // Changed the variable name "CoNtRoL"  to "control"  // Changed the method name "SeT_Ui"  to "setUi"
 	}
 
 
-	public void SeT_StAtE(uI_sTaTe state) {
-		this.StAtE = state;
+	public void setState(UiState state) { // Cahnged the method name "SeT_StAtE"  to "setState"
+		this.state = state;  // Changed the variable name "StAtE" to "state"
 	}
 
 	
-	public void RuN() {
-		OuTpUt("Fix Book Use Case UI\n");
+	public void run() {  // Changed the method name "RuN" to "Run"
+ 		output("Fix Book Use Case UI\n");  // Changed the method name "OuTpUt"  to "output"
 		
 		while (true) {
 			
-			switch (StAtE) {
+			switch (state) {  // Changed the variable name "StAtE" to "state"
 			
 			case READY:
-				String BoOk_EnTrY_StRiNg = iNpUt("Scan Book (<enter> completes): ");
-				if (BoOk_EnTrY_StRiNg.length() == 0) 
-					CoNtRoL.SCannING_COMplete();
+
+				String bookEntryString = input("Scan Book (<enter> completes): ");  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"  // Changed the method type "iNpUt" to "input"
+				if (bookEntryString.length() == 0){  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"
+				
+					control.scanningComplete();  // Changed the variable name "CoNtRoL"  to "control"  // Changed the method name "SCannING_COMplete" to "scanningComplete"
+
+				String bookEntryString = input("Scan Book (<enter> completes): ");  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"
+				if (bookEntryString.length() == 0){  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"
+				
+					control.scanningComplete();  // Changed the variable name "CoNtRoL"  to "control"  // Changed the method name "SCannING_COMplete" to "Scanning_Complete"
+
+				}
 				
 				else {
 					try {
-						int BoOk_Id = Integer.valueOf(BoOk_EnTrY_StRiNg).intValue();
-						CoNtRoL.BoOk_ScAnNeD(BoOk_Id);
+						int bookId = Integer.valueOf(bookEntryString).intValue();  // Changed the variable name  "BoOk_EnTrY_StRiNg"  to "bookEntryString"  // changed the variable name "BoOk_Id" to "bookId"
+
+						control.bookScanned(bookId);  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable name "BoOk_Id" to "bookId" // Changed the method name "BoOk_ScAnNeD" to "bookScanned"
+
+						control.bookScanned(bookId);  // Changed the variable name "CoNtRoL"  to "control"  // changed the variable name "BoOk_Id" to "bookId"
+
 					}
 					catch (NumberFormatException e) {
-						OuTpUt("Invalid bookId");
+						output("Invalid bookId");  // Changed the method name "OuTpUt" to "output"
 					}
 				}
 				break;	
 				
 			case FIXING:
-				String AnS = iNpUt("Fix Book? (Y/N) : ");
-				boolean FiX = false;
-				if (AnS.toUpperCase().equals("Y")) 
-					FiX = true;
+				String ans = input("Fix Book? (Y/N) : ");  // Changed the variable name "AnS" to "ans" // changed the method name "iNpUt" to "input"
+				boolean fix = false;  // Changed the variable name "FiX" to "fix"
+				if (ans.toUpperCase().equals("Y")){ // Changed the variable name "AnS" to "ans"
+					fix = true; // Changed the variable name "FiX" to "fix"
 				
-				CoNtRoL.FiX_BoOk(FiX);
+				control.fixBook(fix);  // Changed the variable name "CoNtRoL"  to "control"  // Changed the method name "FiX_BoOk" to fixBook  // Changed the variable name "FiX" to "fix"
 				break;
-								
+				}				
 			case COMPLETED:
-				OuTpUt("Fixing process complete");
+				output("Fixing process complete"); // Changed the method name "OuTpUt" to "output"
 				return;
 			
 			default:
-				OuTpUt("Unhandled state");
-				throw new RuntimeException("FixBookUI : unhandled state :" + StAtE);			
+				output("Unhandled state");  // Changed the method name "OuTpUt" to "output"
+				throw new RuntimeException("FixBookUI : unhandled state :" + state);  // Changed the variable name "StAtE"	 to "state"		
 			
 			}		
 		}
@@ -70,19 +100,19 @@ public class FixBookUI {
 	}
 
 	
-	private String iNpUt(String prompt) {
+	private String input(String prompt) { // Changed the method name "iNpUt" to "input"
 		System.out.print(prompt);
-		return InPuT.nextLine();
+		return input.nextLine();  // changed the variable name "InPuT" to "input"
 	}	
 		
 		
-	private void OuTpUt(Object object) {
+	private void output(Object object) { // Changed the method name "OuTpUt" to "output"
 		System.out.println(object);
 	}
 	
 
-	public void dIsPlAy(Object object) {
-		OuTpUt(object);
+	public void display(Object object) { // changed the method name "dIsPlAy" to "display"
+		output(object); // Changed the method name "OuTpUt" to "output"
 	}
 	
 	

@@ -1,6 +1,9 @@
 package library.returnBook;
 import java.util.Scanner;
 
+//Author   : Dilanka
+//Mediator : Chiranga
+//Reviever : Nipuna
 
 public class ReturnBookUI {
 
@@ -51,7 +54,7 @@ public class ReturnBookUI {
 				if (ans.toUpperCase().equals("Y")) {				
 					isDamaged = true;
 				}
-				control.dischageLoan(isDamaged);
+				control.dischargeLoan(isDamaged);
 			
 			case COMPLETED:
 				output("Return processing complete");

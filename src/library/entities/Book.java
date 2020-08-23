@@ -34,7 +34,7 @@ public class Book implements Serializable {
 		sb.append("  Book: ").append(id).append("\n")
 		  .append("  Title:  ").append(title).append("\n")
 		  .append("  Author: ").append(author).append("\n")
-		  .append("  CallNo: ").append(callno).append("\n")
+		  .append("  CallNo: ").append(callNo).append("\n")
 		  .append("  State:  ").append(State);
 		
 		return sb.toString();
@@ -55,7 +55,7 @@ public class Book implements Serializable {
 	}
 
 	
-	public boolean isOn_Loan() {
+	public boolean isOnLoan() {
 		return State == State.ON_LOAN;
 	}
 
@@ -65,16 +65,16 @@ public class Book implements Serializable {
 	}
 
 	
-	public void Borrow() {
-		if (State.equals(State.AVAILABLE))
-		{
+	public void borrow() {
+		if (State.equals(State.AVAILABLE)) {
+		
 
  			State = State.ON_LOAN;
 		}
 			
 		    
-		else 
-		{
+		else { 
+		
 			throw new RuntimeException(String.format("Book: cannot borrow while book is in state: %s", State));
 		}
 		
@@ -82,33 +82,31 @@ public class Book implements Serializable {
 	}
 
 
-	public void Return(boolean damaged) {
-		if (State.equals(State.ON_LOAN)) 
-		{
-			if (DAMAGED) 
-				State = State.DAMAGED;
-		}	
-			else 
-		{
-				State = State.AVAILABLE;
-		]	
+	public void returnStatus(boolean damaged) {
+		if (State.equals(State.ON_LOAN)) {
 		
-		else 
-		{
+			if (damaged) { 
+				State = State.DAMAGED;
+			}	
+			else {
+				State = State.AVAILABLE;
+			}	
+		
+		} 
+		else {
 			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", State));
-		}
-				
+		}		
 	}
 
 	
-	public void Repair() {
-		if (State.equals(State.DAMAGED)) 
-		{
+	public void repair() {
+		if (State.equals(State.DAMAGED)) {
+		
 			State = State.AVAILABLE;
 		}
 		
-		else 
-		{
+		else { 
+		
 			throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", State));
 		}
 		
