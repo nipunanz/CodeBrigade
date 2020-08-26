@@ -130,30 +130,35 @@ public class Library implements Serializable {
 	}
 
 
-	public Member addMember(String lastName, String firstName, String email, int phoneNo) {		
-		Member member = new Member(lastName, firstName, email, phoneNo, getNextMemberId());
-		members.put(member.getId(), member);		
+	public Member addMember(String lastName, String firstName, String email, int phoneNo) {	
+		int memberId = getNextMemberId();
+		Member member = new Member(lastName, firstName, email, phoneNo, memberId);
+		int id = member.getId();
+		members.put(id, member);		
 		return member;
 	}
 
 	
-	public Book addBook(String a, String t, String c) {		
-		Book b = new Book(a, t, c, getNextBookId());
+	public Book addBook(String a, String t, String c) {	
+		int bookId = getNextBookId();
+		Book b = new Book(a, t, c, bookId);
 		catelog.put(b.getId(), b);		
 		return b;
 	}
 
 	
 	public Member getMember(int memberId) {
-		if (members.containsKey(memberId)) 
-			return members.get(memberId);
+		if (members.containsKey(memberId)) {
+		    return members.get(memberId);
+		}
 		return null;
 	}
 
 	
 	public Book getBook(int bookId) {
-		if (catelog.containsKey(bookId)) 
-			return catelog.get(bookId);		
+		if (catelog.containsKey(bookId)) {
+		    return catelog.get(bookId);
+		}
 		return null;
 	}
 
@@ -164,16 +169,17 @@ public class Library implements Serializable {
 
 	
 	public boolean isMemberBorrow(Member member) {		
-		if (member.getNumberOfCurrentLoans() == LOAN_LIMIT ) 
+		if (member.getNumberOfCurrentLoans() == LOAN_LIMIT) {
 			return false;
-				
-		if (member.finesOwned() >= MAX_FINES_OWED) 
+		} 	
+		if (member.finesOwned() >= MAX_FINES_OWED) {
 			return false;
-				
-		for (Loan loan : member.getLoan()) 
-			if (loan.isOverdue()) 
+		} 
+		for (Loan loan : member.getLoan()) {
+			if (loan.isOverdue()) {
 				return false;
-			
+			}
+		}
 		return true;
 	}
 
@@ -195,9 +201,9 @@ public class Library implements Serializable {
 	
 	
 	public Loan getLoanByBookId(int bookId) {
-		if (currentLoans.containsKey(bookId)) 
+		if (currentLoans.containsKey(bookId)) {
 			return currentLoans.get(bookId);
-		
+		}
 		return null;
 	}
 	
@@ -231,9 +237,9 @@ public class Library implements Serializable {
 
 
 	public void checkCurrentLoans() {
-		for (Loan loan : currentLoans.values()) 
-		    loan.checkOverdue();
-				
+		for (Loan loan : currentLoans.values()) {
+			loan.checkOverdue();
+		}
 	}
 
 
@@ -242,10 +248,9 @@ public class Library implements Serializable {
 			currentBook.repair();
 			damagedBooks.remove(currentBook.getId());
 		}
-		else 
+		else {
 			throw new RuntimeException("Library: repairBook: book is not damaged");
-		
-		
+		}
 	}
 	
 	
